@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "c25d713a-c2b4-4f9d-b243-57f0587eb49c",
+		"name": "d4-f11n12-vmo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vietnh\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZXRuaCIsImlhdCI6MTYzMTYzOTY3OCwiZXhwIjoxNjMyMjQ0NDc4fQ.UgjZCoT4GXqoBGyVedz47TYmaX78lkAhkU5COeiPGSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/7340b670-149b-11ec-bde7-b53dea575d22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"7340b670-149b-11ec-bde7-b53dea575d22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZXRuaCIsImlhdCI6MTYzMTYzOTY3OCwiZXhwIjoxNjMyMjQ0NDc4fQ.UgjZCoT4GXqoBGyVedz47TYmaX78lkAhkU5COeiPGSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"whodis\",\n    \"password\": \"123\",\n    \"age\": 21,\n    \"email\": \"vietnh@vmodev.com\",\n    \"phone\": \"0384846791\",\n    \"address\": \"HN\",\n    \"isActive\": 1\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vietnh1\",\n    \"password\": \"123\",\n    \"age\": 21,\n    \"email\": \"vietnh1@vmodev.com\",\n    \"phone\": \"0384846791\",\n    \"address\": \"HN\",\n    \"isActive\": 1\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/c58d2540-122e-11ec-aeb6-d5f60cae42f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c58d2540-122e-11ec-aeb6-d5f60cae42f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id/inactive",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/c58d2540-122e-11ec-aeb6-d5f60cae42f9/inactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c58d2540-122e-11ec-aeb6-d5f60cae42f9",
+								"inactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id/active",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/c58d2540-122e-11ec-aeb6-d5f60cae42f9/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c58d2540-122e-11ec-aeb6-d5f60cae42f9",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/4ac5a930-1234-11ec-84b1-4f374a1cbc84",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"4ac5a930-1234-11ec-84b1-4f374a1cbc84"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "/orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/9ea56920-1520-11ec-bb91-fdc6c9203636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"9ea56920-1520-11ec-bb91-fdc6c9203636"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 170000000,\n    \"tax\": 0,\n    \"discount\": 0,\n    \"totalPrice\": 170000000,\n    \"isDeleted\": 0,\n    \"customerId\": \"\",\n    \"orderDetails\": [\n        {\n            \"price\": 120000000,\n            \"tax\": 0,\n            \"discount\": 0,\n            \"totalPrice\": 120000000,\n            \"isDeleted\": 0,\n            \"productId\": \"\"\n        },\n        {\n            \"price\": 50000000,\n            \"tax\": 0,\n            \"discount\": 0,\n            \"totalPrice\": 50000000,\n            \"isDeleted\": 0,\n            \"productId\": \"\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/order/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"3683e880-1589-11ec-a25d-4db41fd7a3ed\",\n    \"price\": 170000000,\n    \"tax\": 0,\n    \"discount\": 0,\n    \"totalPrice\": 170000000,\n    \"isDeleted\": 0,\n    \"customerId\": \"223e9780-157f-11ec-b4bf-63275d8a5ede\",\n    \"updatedAt\": \"2021-09-14T18:26:01.096Z\",\n    \"createdAt\": \"2021-09-14T18:26:01.096Z\",\n    \"orderDetails\": [\n        {\n            \"id\": \"3684abd0-1589-11ec-a25d-4db41fd7a3ed\",\n            \"price\": 120000000,\n            \"tax\": 0,\n            \"discount\": 0,\n            \"totalPrice\": 120000000,\n            \"isDeleted\": 0,\n            \"productId\": \"22409350-157f-11ec-b4bf-63275d8a5ede\",\n            \"orderId\": \"3683e880-1589-11ec-a25d-4db41fd7a3ed\",\n            \"createdAt\": \"2021-09-14T18:26:01.100Z\",\n            \"updatedAt\": \"2021-09-14T18:26:01.100Z\"\n        },\n        {\n            \"id\": \"3684abd1-1589-11ec-a25d-4db41fd7a3ed\",\n            \"price\": 50000000,\n            \"tax\": 0,\n            \"discount\": 0,\n            \"totalPrice\": 50000000,\n            \"isDeleted\": 0,\n            \"productId\": \"22459c60-157f-11ec-b4bf-63275d8a5ede\",\n            \"orderId\": \"3683e880-1589-11ec-a25d-4db41fd7a3ed\",\n            \"createdAt\": \"2021-09-14T18:26:01.100Z\",\n            \"updatedAt\": \"2021-09-14T18:26:01.100Z\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/58ae0700-1580-11ec-8dbe-13a3bea5429f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"58ae0700-1580-11ec-8dbe-13a3bea5429f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/order/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/58ae0700-1580-11ec-8dbe-13a3bea5429f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"58ae0700-1580-11ec-8dbe-13a3bea5429f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

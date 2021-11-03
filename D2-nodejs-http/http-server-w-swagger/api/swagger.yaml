@@ -1,0 +1,100 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Swagger Node-HTTP"
+host: "localhost:8080"
+basePath: "/api"
+
+tags:
+- name: "user"
+  description: "Users API"
+- name: "files"
+  description: "Files API"
+
+paths:
+  /users:
+    get:
+      tags:
+      - "user"
+      summary: "Get all users"
+      operationId: "getUsers"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/UserApiResponse"
+      x-swagger-router-controller: "User"
+  /files:
+    get:
+      tags:
+      - "files"
+      summary: "Get file absolute path"
+      operationId: "getAbsolutePath"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/FileApiResponse"
+      x-swagger-router-controller: "File"
+    post:
+      tags:
+      - "files"
+      summary: "Create new file"
+      operationId: "createFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/FileApiResponse"
+      x-swagger-router-controller: "File"
+    delete:
+      tags:
+      - "files"
+      summary: "Delete new file"
+      operationId: "deleteFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/FileApiResponse"
+      x-swagger-router-controller: "File"
+definitions:
+  UserApiResponse:
+    type: "object"
+    properties:
+      data:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            name:
+              type: "string"
+            age:
+              type: "integer"
+              format: "int32"
+  FileApiResponse:
+    type: "object"
+    properties:
+      data:
+        type: "string"
